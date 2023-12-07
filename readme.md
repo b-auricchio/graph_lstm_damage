@@ -1,7 +1,10 @@
 # BCI GNN Composite Damage Analysis Code
 This is the main code made for the completion of my 2023 internship at the Bristol Composites Institute.
 
-Proposed framework - dataset generation and the Graph-LSTM.
+Proposed framework: dataset generation and the Graph-LSTM.
+
+<img src="/readme/flowchart.png" width=75% height=75%>
+
 
 ## Input File Generation
 - Run `get_odb_data.py` for each .odb and place generated folder in `/data/`.
@@ -20,3 +23,14 @@ The graph LSTM model is instantiated with:
 ## Testing
 - When testing, the `data.dat` file must be present in `/export/`.  
 - The model parameters must be consistent with the trained model parameters and the filename of the weights `.pt` file must be specified.
+
+## Results
+- Left: Correlation between ground truth and predicted values for matrix and delamination failure indices.
+    -  $R^2$ scores of 0.95 and 0.92 respectively
+- Right: Error histogram for matrix and delamination failure index predictions
+    -  RMS scores of 0.06 and 0.03 respectively
+
+<p float="left">
+  <img src="/readme/results1.png" width="39.5%" />
+  <img src="/readme/results2.png" width="50%" /> 
+</p>
